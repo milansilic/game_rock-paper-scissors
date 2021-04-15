@@ -1,14 +1,14 @@
-var res = document.getElementById("result");
-var userChoice = "";
-var userOpt = document.querySelectorAll(".userOpt li");  // lista 
-var compOpt = document.querySelectorAll(".compOpt li");
+var userChoice = "";    // empty var... value would depend on index from userOpt array
+var userOpt = document.querySelectorAll(".userOpt li");  // array of list items that represent user choices
+var compOpt = document.querySelectorAll(".compOpt li");  // array of list items that represent computer "choices"
+var res = document.getElementById("result");   // html element where the result will be displayed
 
-for (let i = 0; i < userOpt.length; i++) {      // lupujemo kroz niz user opcija
-    userOpt[i].addEventListener("click", ()=>{  // dodeljujemo klik event istim
+for (let i = 0; i < userOpt.length; i++) {      // we loop through user choices...
+    userOpt[i].addEventListener("click", ()=>{  // ...and add an event to everyone of them
         
-        if (i == 0){                            // za svako pojedinacnu user opciju dodeljujemo rezultat i stil 
-            userChoice = "kamen"
-            userOpt[0].style.backgroundColor = "#c9b4e0";
+        if (i == 0){                                        // depending on index...
+            userChoice = "kamen"                            // ...we set a different value... 
+            userOpt[0].style.backgroundColor = "#c9b4e0";   // ...and set of different styles
             userOpt[0].style.borderWidth = "11px";
             userOpt[1].style.backgroundColor = "initial";
             userOpt[1].style.borderWidth = "1px";
@@ -34,12 +34,12 @@ for (let i = 0; i < userOpt.length; i++) {      // lupujemo kroz niz user opcija
     });
 }
 
-function rezultat(){
-    var compChoice = "";
+function rezultat(){                // function for creating computer choice and relevant display styles
+    var compChoice = "";                // empty var... value would depend on random number
     var randomIndex = Math.random();
-    if(randomIndex < 0.34){       // za svaku pojedinacnu comp opciju dodeljujemo rezultat i stil 
-        compChoice = "kamen";
-        compOpt[0].style.borderWidth = "11px";
+    if(randomIndex < 0.34){                     // for every random number option...
+        compChoice = "kamen";                   // ...we set a different value...
+        compOpt[0].style.borderWidth = "11px";  // ...and set of different styles
         compOpt[0].style.backgroundColor = "#a3ccc5";
         compOpt[1].style.borderWidth = "1px";
         compOpt[1].style.backgroundColor = "initial";
@@ -62,13 +62,13 @@ function rezultat(){
         compOpt[2].style.borderWidth = "11px";
         compOpt[2].style.backgroundColor = "#a3ccc5";
     }
-
-    console.log("user choice: " + userChoice);
-    console.log("comp choice: " + compChoice);
     
-    switch (compChoice) {  // pravimo scenarija za rezultat u zavisnosti od poredjenja user odabira i computer random odabira
-        case "kamen":
-            switch (userChoice) {
+    console.log("user choice: " + userChoice);  // we check user... 
+    console.log("comp choice: " + compChoice);  //...and computer choice in console
+
+    switch (compChoice) {   // we make different result scenarios depending on comparison between user and computer choices
+        case "kamen":           // inside switch cases of switch statement that works with computer choices...
+            switch (userChoice) {   //...we nest another switch statement that works with user choices
                 case "kamen":
                     console.log("draw");
                     res.innerHTML = "draw";
