@@ -83,7 +83,7 @@ function rezultat(){
                     break;
                 case "":
                     console.log("user nije odabrao");
-                    res.innerHTML = "you must choose to play";
+                    res.innerHTML = "you must choose item to play";
                     break;
             }
             break;
@@ -103,7 +103,7 @@ function rezultat(){
                     break;
                 case "":
                 console.log("user nije odabrao");
-                res.innerHTML = "you must choose to play";
+                res.innerHTML = "you must choose item to play";
                 break;
             }
             break;
@@ -123,7 +123,7 @@ function rezultat(){
                     break;
                 case "":
                 console.log("user nije odabrao");
-                res.innerHTML = "you must choose to play";
+                res.innerHTML = "you must choose item to play";
                 break;
             }
             break;

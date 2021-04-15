@@ -3,25 +3,24 @@ body{
     background-color: #52ccb8;
     text-align: center;
     font: 400 13.3333px Arial;
+    padding-top: 20px;
 }
-.comp, .user{
-    min-width: 320px;
-    width: calc(60vw + 140px);
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 26px 0;
-}
-ul{
+
+ul{border: px solid lime;
     list-style-type: none;
     display: flex;
     justify-content: space-evenly;
+    width: 100%;
+    margin: 0px auto;
+    padding: 26px 0;
 }
+
 li{
     border-radius: 50%;
-    width: 180px; height: 180px;
+    width: calc(40px + 17vw); height: calc(40px + 17vw);
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 100px auto;
+    background-size: 60% auto;
 }
 li:nth-of-type(1){
     background-image: url("img/roc.png");
@@ -32,19 +31,20 @@ li:nth-of-type(2){
 li:nth-of-type(3){
     background-image: url("img/sci.png");
 }
-.compOpt li{border: 1px solid #999;
 
+.compOpt li{
+    border: 1px solid #999;
 }
-.userOpt li{border: 1px solid #7a00ff;
+.userOpt li{
+    border: 1px solid #7a00ff;
     cursor: pointer;
     transition: all .2s ease-out;
 }
-.userOpt li:hover{
-    border-width: 11px !important;
-    
-}
 
-/* BUTTON */
+/* BUTTONS */
+.btns{
+    margin: 30px 0;
+}
 .reset{
     display: inline-block;
     vertical-align: middle;
@@ -105,8 +105,29 @@ li:nth-of-type(3){
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
+
+/* RESULT */
 h1{
-    font: 400 40px Arial;
-    font-weight: 900;
+    font: 800 24px Arial;
     margin: 30px;
+}
+
+@media only screen and (min-width:768px){
+    ul{
+        max-width: 800px;
+        margin: 20px auto;
+    }
+    li{
+        width: 180px; height: 180px;
+        background-size: 100px auto;
+    }
+    .userOpt li:hover{
+        border-width: 11px !important;
+    }
+    .btns{
+        margin: 0;
+    }
+    h1{
+        font: 900 40px Arial;
+    }
 }
